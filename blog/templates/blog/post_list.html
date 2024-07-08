@@ -8,11 +8,13 @@
             <h1><a href="/">Anelim's blog</a></h1>
         </header>
 
+    {% for post in posts %}
         <article>
-            <time>published: 08/07/2024, 12:20</time>
-            <h2><a href="">My first post</a></h2>
-            <p>ok ok, vamo la, testando esse bagulho ja que eh a terceira vez que eu faco o tutorial e eh a primeira vez que chego nessa parte eu acho, nao lembro onde parei na primeira vez</p>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
+    {% endfor %}
 
         <article>
             <time>published: 08/07/2024, 12:22</time>
